@@ -1,18 +1,18 @@
-$('document').ready(function(){
-	$('.popup-btn').on('click',function(){
-		var popup = $(this).attr('popup-target');
-		$(popup).show();
-		$('.overlay').attr('popup-target',popup);
-		$(".overlay").show();
-	})
-	$('.overlay').on('click',function(){
-		var popup = $(this).attr('popup-target');
-		$(popup).hide();
-		$(".overlay").hide();
-	})
-	$('.sidebar-btn').on('click',function(){
-		$('.sidebar').show();
-		$('.overlay').attr('popup-target','.sidebar');
-		$(".overlay").show();
-	})
+$('document').ready(function() {
+    $('.btn-target').on('click', function() {
+        var popup = $(this).attr('target');
+        if ($(popup).hasClass("show")) {
+            $(popup).removeClass("show");
+            $(".overlay").removeClass("show");
+        } else {
+            $(popup).addClass("show");
+            $('.overlay').attr('target', popup);
+            $(".overlay").addClass("show");
+        }
+    })
+    $('.overlay').on('click', function() {
+        var popup = $(this).attr('target');
+        $(popup).removeClass("show");
+        $(".overlay").removeClass("show");
+    })
 })

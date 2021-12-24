@@ -1,198 +1,305 @@
-:root{
-	--white:#fff;
-	--black:#000;
-	--hover:#1D82E1FF;
-	--nav-height:54px;
+:root {
+    --white: #fff;
+    --black: #000;
+    --hover: #1D82E1FF;
+    --nav-height: 54px;
 }
-.bg-nav{
-	background: #23a;
+
+.bg-nav {
+    background: #23a;
 }
-*{
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	font-family: 'Work Sans', sans-serif;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Work Sans', sans-serif;
 }
-a, a:hover{
-	text-decoration: none;
+
+a,
+a:hover {
+    text-decoration: none;
 }
-ul{
-	margin: 0;
-	padding: 0;
+
+ul {
+    margin: 0;
+    padding: 0;
 }
-body{
-	margin:0;
-	padding: 0;
+
+body {
+    margin: 0;
+    padding: 0;
 }
-button{
-	background: var(--white);
-	border-radius: 10px;
-	border: 1px solid #A0A0A0;
-	padding: 10px 15px;
-	cursor: pointer;
+
+button {
+    background: var(--white);
+    border-radius: 10px;
+    border: 1px solid #A0A0A0;
+    padding: 10px 15px;
+    cursor: pointer;
 }
-button:hover{
-	border: 1px solid #1D82E1FF;
-	color: #1D82E1FF;
-	background: #DEE;
+
+button:hover {
+    border: 1px solid #1D82E1FF;
+    color: #1D82E1FF;
+    background: #DEE;
 }
-.btn-icon{
-	height: 48px;
-	width: 48px;
-	line-height: 48px;
-	padding: 0;
-	vertical-align: middle;
-	border:none;
-	border-radius: 100%;
-	background: transparent;
-	font-size: 26px;
-	overflow: hidden;
+
+input[type="text"],
+input[type="password"],
+input[type="number"] {
+    margin: 10px 0;
+    width: 100%;
+    padding: 9px 15px;
+    border-radius: 10px;
+    border: 1px solid #F3F3F3;
+    background: #F3F3F3;
+    outline: none;
+    font-size: 18px;
 }
-.btn-icon img{
-	border-radius: 100%;
-	height: 100%;
-	width: 100%;
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus {
+    border: 1px solid var(--hover);
+    background: var(--white);
+    outline: none;
 }
-.btn-icon:hover{
-	background: #DEE;
-	border:none;
+
+input[type="text"]:hover,
+input[type="password"]:hover,
+input[type="number"]:hover {
+    border: 1px solid var(--hover);
+    background: #DEE;
+    outline: none;
 }
-nav{
-	width: 100%;
-	height: var(--nav-height);
-	background: var(--white);
-	display: flex;
-	padding: 5px 6px;
+
+.transition-width {
+    transition: width 0.5s;
 }
-nav .nav-title{
-	height: 100%;
-	flex:1;
-	float:left;
-	line-height: var(--nav-height);
-	font-size: 30px;
-	font-weight: 600;
-	vertical-align: middle;
-	padding: 0 6px;
+
+.transition-height {
+    transition: height 0.5s;
 }
-nav .nav-btn{
-	float:right;
-	height: 100%;
-	position: relative;
+
+.btn-icon {
+    height: 48px;
+    width: 48px;
+    line-height: 48px;
+    padding: 0;
+    vertical-align: middle;
+    border: none;
+    border-radius: 100%;
+    background: transparent;
+    font-size: 26px;
+    overflow: hidden;
 }
-nav .btn-icon{
-	height: 100%;
-	width: calc(var(--nav-height) - 10px);
-	line-height: calc(var(--nav-height) - 10px);
-	margin-left: 3px;
-	margin-right: 3px;
+
+.btn-icon img {
+    border-radius: 100%;
+    height: 100%;
+    width: 100%;
 }
-.overlay{
-	display: none;
-	position: absolute;
-	top:0;
-	left:0;
-	width: 100%;
-	height: 100%;
-	background: #ddd;
-	opacity: .2;
-	z-index: 2;
+
+.btn-icon:hover {
+    background: #DEE;
+    border: none;
 }
-.body{
-	width: 100%;
-	padding: 12px;
-	margin:0 auto;
+
+nav {
+    width: 100%;
+    height: var(--nav-height);
+    background: var(--white);
+    display: flex;
+    padding: 5px 6px;
 }
-.sidebar{
-	display: none;
-	position: absolute;
-	top:0;
-	left:0;
-	height: 100%;
-	width: 75%;
-	padding: 10px;
-	background: #CCCCCC;
-	z-index: 4;
+
+nav .nav-title {
+    height: 100%;
+    flex: 1;
+    float: left;
+    line-height: var(--nav-height);
+    font-size: 30px;
+    font-weight: 600;
+    vertical-align: middle;
+    padding: 0 6px;
 }
-.popup-menu{
-	display: none;
-	position: absolute;
-	z-index: 3;
-	background: var(--white);
-	border-radius: 10px;
-	padding: 10px 0;
-	top: var(--nav-height);
-	right:5px;  
-	min-width: 150px;
-	box-shadow: rgba(0, 0, 0, 0.2) 10px 20px 30px;
+
+nav .nav-btn {
+    float: right;
+    height: 100%;
+    position: relative;
 }
-.popup-menu ul{
-	list-style: none;
+
+nav .btn-icon {
+    height: 100%;
+    width: calc(var(--nav-height) - 10px);
+    line-height: calc(var(--nav-height) - 10px);
+    margin-left: 3px;
+    margin-right: 3px;
 }
-.popup-menu li{
-	padding: 8px 16px;
-	font-size: 18px!important;
-	cursor: pointer;
+
+.overlay {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #ddd;
+    opacity: .2;
+    z-index: 2;
 }
-.popup-menu li:hover{
-	background: var(--hover);
-	color: var(--white)!important;
+
+.overlay.show {
+    display: block;
 }
-.popup{
-	display: none;
-	position: absolute;
-	z-index: 4;
-	background: var(--white);
-	border-radius: 10px;
-	padding: 10px 0;
-	margin: var(--nav-height) auto;
-	top: 0;
-	bottom: 0;
-	left:0;
-	right:0;  
-	width: 90%;
-	min-height: 500px;
-	max-height: 80%;
-	box-shadow: rgba(0, 0, 0, 0.2) 10px 20px 30px;
+
+.body {
+    width: 100%;
+    padding: 12px;
+    margin: 0 auto;
 }
-input[type="text"],input[type="password"],input[type="number"]{
-	margin: 10px 0;
-	width: 100%;
-	padding: 9px 15px;
-	border-radius: 10px;
-	border: 1px solid #F3F3F3;
-	background: #F3F3F3;
-	outline: none;
-	font-size: 18px;
+
+.sidebar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0px;
+    transition: width 1s;
 }
-input[type="text"]:focus,input[type="password"]:focus,input[type="number"]:focus{
-	border: 1px solid var(--hover);
-	background: var(--white);
-	outline: none;
+
+.sidebar.show {
+    width: 75%;
+    transition: width 1s;
+    padding: 10px;
+    background: #CCCCCC;
+    z-index: 4;
 }
-input[type="text"]:hover,input[type="password"]:hover,input[type="number"]:hover{
-	border: 1px solid var(--hover);
-	background: #DEE;
-	outline: none;
+
+.item {
+    width: 100%;
+    min-height: 200px;
+    border: none;
+    border-radius: 10px;
+    background: #DEE;
+    padding: 10px;
+    overflow: hidden;
 }
-.list{
-	display: inline-flex;
-	flex-wrap:wrap;
-	width: 100%;
-	margin: 10px 0;
+
+.img {
+    border-radius: 10px;
+    width: 100%;
+    height: auto;
 }
-.item{
-	width: 100%;
-	min-height: 200px;
-	border: none;
-	border-radius: 10px;
-	background: #DEE;
-	margin-bottom:10px; 
-	padding: 10px;
+
+.popup-menu {
+    display: none;
+    position: absolute;
+    z-index: 3;
+    background: var(--white);
+    border-radius: 10px;
+    padding: 10px 0;
+    top: var(--nav-height);
+    right: 5px;
+    min-width: 150px;
+    box-shadow: rgba(0, 0, 0, 0.2) 10px 20px 30px;
 }
-.img{
-	border-radius: 10px;
+
+.popup-menu.show {
+    display: block;
 }
-img{
-	width: 100%;
-	height: auto;
+
+.popup-menu ul {
+    list-style: none;
+}
+
+.popup-menu li {
+    padding: 8px 16px;
+    font-size: 18px !important;
+    cursor: pointer;
+}
+
+.popup-menu li:hover {
+    background: var(--hover);
+    color: var(--white) !important;
+}
+
+.popup {
+    display: none;
+    position: absolute;
+    z-index: 4;
+    background: var(--white);
+    border-radius: 10px;
+    padding: 10px 0;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 90%;
+    height: fit-content;
+    max-height: 80%;
+    box-shadow: rgba(0, 0, 0, 0.2) 10px 20px 30px;
+}
+
+.popup.show {
+    display: block;
+}
+
+.popup .popup-header {
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.popup .popup-body {
+    padding: 10px;
+    min-height: 350px;
+}
+
+.popup .popup-footer {
+    padding: 0 10px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.grid {
+    width: 100%;
+    margin: 0.75rem 0;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 12px;
+}
+
+.col {
+    grid-column: span 12;
+}
+
+.col-2 {
+    grid-column: span 2;
+}
+
+.col-3 {
+    grid-column: span 3;
+}
+
+.col-4 {
+    grid-column: span 4;
+}
+
+.col-5 {
+    grid-column: span 5;
+}
+
+.col-6 {
+    grid-column: span 6;
+}
+
+.col-7 {
+    grid-column: span 7;
+}
+
+.col-8 {
+    grid-column: span 8;
 }
