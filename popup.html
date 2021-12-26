@@ -1,7 +1,33 @@
-<button class="btn-target" target="#dialog">Open popup dialog</button>
-<div class="popup-button">
-    <button class="btn-target" target="#popup-menu">Open popup menu</button>
-    <div class="popup-menu" id="popup-menu">
+<button class="btn-target" target="#dialog">Popup dialog</button>
+<div class="popup-button" id="popup-menu">
+    <button class="btn-target" target="#popup-menu">Popup menu</button>
+    <div class="popup-menu" style="width: 500px">
+        <ul>
+            <li><a href="#" class="popup-menu-link">New</a></li>
+            <li>Open</li>
+            <li>Save</li>
+            <li>Exit</li>
+        </ul>
+    </div>
+</div>
+<div class="popup-button" id="popup-menu-right">
+    <button class="btn-target" target="#popup-menu-right">
+        Popup menu right
+    </button>
+    <div class="popup-menu popup-menu-right" style="width: 500px">
+        <ul>
+            <li><a href="#" class="popup-menu-link">New</a></li>
+            <li>Open</li>
+            <li>Save</li>
+            <li>Exit</li>
+        </ul>
+    </div>
+</div>
+<div class="popup-button" id="popup-menu-icon">
+    <button class="btn-icon btn-target" target="#popup-menu-icon">
+        <i class="fal fa-ellipsis-v"></i>
+    </button>
+    <div class="popup-menu" style="width: 500px">
         <ul>
             <li><a href="#" class="popup-menu-link">New</a></li>
             <li>Open</li>

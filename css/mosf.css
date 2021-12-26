@@ -8,7 +8,17 @@
 .bg-nav {
     background: #23a;
 }
+::-webkit-scrollbar {
+    width: 5px;
+}
 
+::-webkit-scrollbar-thumb {
+    background: #a0a0a0;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #888;
+}
 * {
     margin: 0;
     padding: 0;
@@ -31,7 +41,8 @@ body {
     padding: 0;
 }
 
-button {
+button,
+input[type="submit"] {
     background: var(--white);
     border-radius: 10px;
     border: 1px solid #a0a0a0;
@@ -39,15 +50,16 @@ button {
     cursor: pointer;
 }
 
-button:hover {
+button:hover,
+input[type="submit"]:hover {
     border: 1px solid #1d82e1ff;
     color: #1d82e1ff;
     background: #dee;
 }
-
-input[type="text"],
-input[type="password"],
-input[type="number"] {
+select,
+.form-upload,
+input {
+    height: 40px;
     margin: 10px 0;
     width: 100%;
     padding: 9px 15px;
@@ -57,23 +69,134 @@ input[type="number"] {
     outline: none;
     font-size: 18px;
 }
-
-input[type="text"]:focus,
-input[type="password"]:focus,
-input[type="number"]:focus {
+input:focus {
     border: 1px solid var(--hover);
     background: var(--white);
     outline: none;
 }
-
-input[type="text"]:hover,
-input[type="password"]:hover,
-input[type="number"]:hover {
+input:hover,
+select:hover,
+.form-upload:hover {
     border: 1px solid var(--hover);
     background: #dee;
     outline: none;
 }
+input[type="color"] {
+    height: 40px;
+    width: 40px;
+    padding: 2px;
+}
+form {
+    margin: 15px 0;
+}
+.form-group {
+    margin-top: 15px;
+}
+.form-group input,
+.form-group select {
+    margin: 5px 0;
+}
 
+.form-inline {
+    display: flex;
+}
+
+.form-inline label {
+    margin: 10px 0;
+    line-height: 40px;
+    padding-right: 10px;
+}
+.grid label {
+    padding-right: 0;
+}
+.form-inline label,
+.form-radio label {
+    line-height: normal;
+}
+
+.radio,
+.checkbox {
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    padding-top: 2px;
+    margin-top: 5px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: fit-content;
+}
+
+.radio input,
+.checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.radio-checkmark,
+.checkbox-checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #f3f3f3;
+}
+.radio-checkmark {
+    border-radius: 50%;
+}
+.checkbox-checkmark {
+    padding: 4px;
+    border: 1px solid transparent;
+    color: #a0a0a0;
+}
+.radio:hover input ~ .radio-checkmark,
+.checkbox:hover input ~ .checkbox-checkmark {
+    border: 1px solid #1d82e1ff;
+    background: #dee;
+    color: #1d82e1ff;
+}
+
+.radio input:checked ~ .radio-checkmark,
+.checkbox input:checked ~ .checkbox-checkmark {
+    background-color: #1d82e1ff;
+    color: var(--white);
+}
+
+.radio:after,
+.checkbox:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.radio input:checked ~ .radio-checkmark:after,
+.checkbox input:checked ~ .checkbox-checkmark:after {
+    display: block;
+}
+.form-upload {
+    position: relative;
+    padding: 2px;
+    display: flex;
+}
+.form-upload input[type="file"] {
+    opacity: 0;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    position: absolute;
+}
+.form-upload span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 40px;
+    margin-left: 5px;
+}
 .transition-width {
     transition: width 0.5s;
 }
@@ -228,7 +351,12 @@ nav .btn-icon {
     right: 0;
     left: auto;
 }
-.popup-menu.show {
+.popup-button.show .btn-target {
+    border: 1px solid #1d82e1ff;
+    color: #1d82e1ff;
+    background: #dee;
+}
+.popup-button.show .popup-menu {
     display: block;
 }
 
@@ -292,7 +420,9 @@ nav .btn-icon {
     grid-template-columns: repeat(12, 1fr);
     grid-gap: 12px;
 }
-
+.form-inline.grid {
+    margin: 0;
+}
 .col {
     grid-column: span 12;
 }
@@ -323,4 +453,10 @@ nav .btn-icon {
 
 .col-8 {
     grid-column: span 8;
+}
+.col-9 {
+    grid-column: span 9;
+}
+.col-10 {
+    grid-column: span 10;
 }
