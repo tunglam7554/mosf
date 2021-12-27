@@ -36,7 +36,7 @@ button.bg-primary {
 
 input[type=range] {
     background: var(--bg-input);
-    height: 15px;
+    height: 25px;
     padding: 0;
     -webkit-appearance: none;
     width: 100%;
@@ -48,16 +48,16 @@ input[type=range]::-webkit-slider-thumb {
     border: none;
     height: 25px;
     width: 25px;
-    border-radius: 50%;
+    border-radius: 10px;
     background: var(--primary);
     cursor: pointer;
 }
 
 input[type=range]::-moz-range-thumb {
     border: none;
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+    border-radius: 10px;
     background: var(--primary);
     cursor: pointer;
 }
@@ -83,6 +83,7 @@ a:hover {
 ul {
     margin: 0;
     padding: 0;
+    list-style: none;
 }
 
 body {
@@ -108,6 +109,8 @@ input[type="submit"]:hover {
 }
 
 select,
+audio,
+video,
 .form-upload,
 input {
     height: 40px;
@@ -211,6 +214,7 @@ form {
 }
 
 .checkbox-checkmark {
+    border-radius: 8px;
     padding: 4px;
     border: 1px solid transparent;
     color: #a0a0a0;
