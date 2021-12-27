@@ -1,6 +1,7 @@
 :root {
     --white: #fff;
-    --black: #000;
+    --black: rgba(0, 0, 0, 0.8);
+    --shadow: rgba(0, 0, 0, 0.2) 10px 20px 30px;
     --hover: #1d82e1ff;
     --nav-height: 54px;
     --primary: #1d82e1ff;
@@ -90,6 +91,7 @@ body {
     margin: 0;
     padding: 0;
     background: var(--white);
+    min-height: 100vh;
 }
 
 button,
@@ -103,8 +105,8 @@ input[type="submit"] {
 
 button:hover,
 input[type="submit"]:hover {
-    border: 1px solid #1d82e1ff;
-    color: #1d82e1ff;
+    border: 1px solid var(--hover);
+    color: var(--primary);
     background: #dee;
 }
 
@@ -222,14 +224,14 @@ form {
 
 .radio:hover input~.radio-checkmark,
 .checkbox:hover input~.checkbox-checkmark {
-    border: 1px solid #1d82e1ff;
+    border: 1px solid var(--primary);
     background: #dee;
-    color: #1d82e1ff;
+    color: var(--primary);
 }
 
 .radio input:checked~.radio-checkmark,
 .checkbox input:checked~.checkbox-checkmark {
-    background-color: #1d82e1ff;
+    background-color: var(--primary);
     color: var(--white);
 }
 
@@ -359,21 +361,20 @@ nav .btn-icon {
     left: 0;
     height: 100%;
     width: 0px;
-    transition: width 1s;
+    max-width: 480px;
+    background: var(--white);
+    z-index: 4;
+    transition: width 0.25s;
     overflow: hidden;
 }
 
 .sidebar.show {
     width: 75%;
-    transition: width 1s;
-    padding: 10px;
-    background: #cccccc;
-    z-index: 4;
-    overflow: hidden;
 }
 
 .sidebar .sidebar-menu {
     width: 100%;
+    padding: 10px;
 }
 
 .sidebar .sidebar-menu .sidebar-item a {
@@ -383,10 +384,17 @@ nav .btn-icon {
     margin-bottom: 5px;
     font-size: 21px;
     border-radius: 10px;
+    color: var(--black);
 }
 
 .sidebar .sidebar-menu .sidebar-item a:hover {
-    background-color: #a0a0a0;
+    background-color: #dee;
+    color: var(--primary);
+}
+
+.sidebar .sidebar-menu .sidebar-item.active a {
+    background-color: var(--bg-input);
+    color: var(--primary);
 }
 
 .item {
@@ -429,8 +437,8 @@ nav .btn-icon {
 }
 
 .popup-button.show .btn-target {
-    border: 1px solid #1d82e1ff;
-    color: #1d82e1ff;
+    border: 1px solid var(--primary);
+    color: var(--primary);
     background: #dee;
 }
 
@@ -468,7 +476,7 @@ nav .btn-icon {
     width: 90%;
     height: fit-content;
     max-height: 80%;
-    box-shadow: rgba(0, 0, 0, 0.2) 10px 20px 30px;
+    box-shadow: var(--shadow);
 }
 
 .popup.show {
