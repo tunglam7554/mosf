@@ -7,6 +7,16 @@
         <link rel="stylesheet" href="css/fonts.css" />
         <link rel="stylesheet" href="css/all.min.css" />
         <link rel="stylesheet" href="css/mosf.css" />
+        <style>
+            html{
+                background: #dfdfdf;
+            }
+            body{
+                width: 100%;
+                max-width: 480px;
+                margin: 0 auto;
+            }
+        </style>
     </head>
 
     <body>
